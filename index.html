@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Harshini ❤️</title>
+
+<style>
+body {
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  color:white;
+  text-align:center;
+}
+
+.page {
+  display:none;
+  height:100vh;
+  padding:30px 20px;
+  box-sizing:border-box;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  overflow-y:auto;
+}
+
+.active { display:flex; }
+
+.photo {
+  width:230px;
+  border-radius:20px;
+  margin-bottom:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.intro { background: linear-gradient(135deg,#d9a7c7,#fffcdc); }
+.memories { background: linear-gradient(135deg,#fbc2eb,#a6c1ee); }
+.moments { background: linear-gradient(135deg,#a1c4fd,#c2e9fb); }
+.feelings { background: linear-gradient(135deg,#c471f5,#fa71cd); }
+.distance { background: linear-gradient(135deg,#2c3e50,#4ca1af); }
+.final { background: linear-gradient(135deg,#ff9a9e,#fad0c4); }
+
+#startScreen {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#fbc2eb,#a6c1ee);
+}
+
+.envelope {
+  width:200px;
+  height:120px;
+  background:#fff;
+  border-radius:10px;
+  cursor:pointer;
+  margin-top:20px;
+}
+
+button {
+  margin:10px;
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:white;
+  color:black;
+  cursor:pointer;
+}
+
+#popup {
+  display:none;
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+}
+
+#popup img {
+  width:300px;
+  border-radius:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="startScreen">
+  <h2>Hey Harshini… there’s something for you ❤️</h2>
+  <p>A letter… just for you</p>
+  <div class="envelope" onclick="start()"></div>
+  <p>From Bhuvanakruthi</p>
+</div>
+
+<!-- INTRO -->
+<div class="page intro">
+<p>
+Hey Harshini…<br>
+There’s something special just for you ❤️<br><br>
+Just a small journey…<br>
+filled with a few things I wanted you to know.
+</p>
+<button onclick="next()">Let’s go</button>
+</div>
+
+<!-- MEMORIES -->
+<div class="page memories">
+<img src="memories.jpg" class="photo">
+<p>
+We’ve known each other for so long…<br>
+from school days to now…<br>
+and somehow, we’ve always been there in each other’s lives ❤️<br><br>
+
+We were never just friends…<br>
+you were my best friend… my sister…<br>
+someone I could share everything with.<br><br>
+
+We’ve had so many memories together —<br>
+laughing, teasing, making fun of each other…<br><br>
+
+And yeah… we fought a lot too 😄<br>
+but not even a single fight ever lasted long.<br>
+Somehow, one of us would always come back…<br>
+and we’d be okay again.
+</p>
+<button onclick="prev()">Back</button>
+<button onclick="next()">Next</button>
+</div>
+
+<!-- MOMENTS -->
+<div class="page moments">
+<img src="moments.jpg" class="photo" onclick="openPopup(this.src)">
+<p>
+We’ve had so many moments together…<br>
+the kind that only we would understand 😄<br><br>
+
+Sitting together every single day…<br>
+doing everything side by side…<br>
+you were literally my crime partner.<br><br>
+
+And those last bench days…<br>
+they were something else.<br>
+Sitting there together…<br>
+doing random things, realizing random stuff…<br>
+and just laughing endlessly.<br><br>
+
+We always found a way<br>
+to make even the simplest moments fun.<br><br>
+
+And honestly…<br>
+nothing ever felt boring when you were there.
+</p>
+<button onclick="prev()">Back</button>
+<button onclick="next()">Next</button>
+</div>
+
+<!-- FEELINGS -->
+<div class="page feelings">
+<img src="feelings.jpg" class="photo">
+<p>
+You’re not just my best friend…<br>
+you’re so much more than that.<br><br>
+
+You’re my comfort…<br>
+my safe place…<br>
+someone I can always be myself with.<br><br>
+
+I respect your dreams…<br>
+everything you want to become…<br>
+and I’ll always support you in it.<br><br>
+
+No matter what happens…<br>
+I’ll always be there for you —<br>
+when you’re happy…<br>
+when you’re low…<br>
+when you just need someone to listen…<br>
+or even just a shoulder to lean on.<br><br>
+
+As your best friend,<br>
+your biggest supporter,<br>
+and your forever cheerleader ❤️<br><br>
+
+And no matter where life takes us…<br>
+I know we’ll always find our way back to each other.
+</p>
+<button onclick="prev()">Back</button>
+<button onclick="next()">Next</button>
+</div>
+
+<!-- DISTANCE -->
+<div class="page distance">
+<img src="distance.jpg" class="photo">
+<p>
+And then… things changed.<br><br>
+
+For the first time…<br>
+we weren’t together anymore.<br>
+Different colleges… different lives…<br>
+and suddenly, everything felt so different.<br><br>
+
+We used to talk less…<br>
+sometimes not even for days…<br>
+and honestly, that hurt more than I expected.<br><br>
+
+I never thought there would be days<br>
+where we wouldn’t talk at all.<br><br>
+
+I missed you in the smallest things…<br>
+in my classes… in random moments…<br>
+even while talking to others.<br><br>
+
+There was this one time…<br>
+during a concert in college…<br>
+when they played a friendship song…<br>
+and I actually cried… thinking about you.<br><br>
+
+We had misunderstandings…<br>
+we fought…<br>
+but somehow, we still found our way back.<br><br>
+
+Because no matter the distance…<br>
+what we have never really changed.<br><br>
+
+And I still miss you…<br>
+more than I can explain 💔
+</p>
+<button onclick="prev()">Back</button>
+<button onclick="next()">Next</button>
+</div>
+
+<!-- FINAL -->
+<div class="page final">
+<img src="final.jpg" class="photo">
+<p>
+And finally…<br>
+it’s your day ❤️<br><br>
+
+Happy Birthday, Harshini 🎉<br><br>
+
+I don’t even know how to put this into words…<br>
+but I’m so grateful to have you in my life.<br><br>
+
+I just want you to always believe in yourself…<br>
+to be confident, strong, and brave<br>
+in everything you do.<br><br>
+
+Take care of yourself…<br>
+stay healthy, stay happy…<br>
+and keep growing into the amazing person you are.<br><br>
+
+And yes… maybe control that little bit of temper sometimes 😄<br><br>
+
+You deserve a life<br>
+that is beautiful, peaceful, and full of happiness…<br><br>
+
+And no matter where we are…<br>
+just don’t forget —<br>
+I’m always there for you.<br><br>
+
+Now go… enjoy your day 😄<br>
+and don’t forget…<br>
+you’re still my favourite idiot ❤️
+</p>
+<button onclick="prev()">Back</button>
+</div>
+
+<!-- POPUP -->
+<div id="popup" onclick="closePopup()">
+  <img id="popupImg">
+</div>
+
+<script>
+let pages = document.querySelectorAll(".page");
+let current = 0;
+
+function start() {
+  document.getElementById("startScreen").style.display="none";
+  pages[0].classList.add("active");
+}
+
+function next() {
+  pages[current].classList.remove("active");
+  current++;
+  pages[current].classList.add("active");
+}
+
+function prev() {
+  pages[current].classList.remove("active");
+  current--;
+  pages[current].classList.add("active");
+}
+
+function openPopup(src) {
+  document.getElementById("popup").style.display="flex";
+  document.getElementById("popupImg").src = src;
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
